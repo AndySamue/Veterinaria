@@ -1,0 +1,65 @@
+<section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                Pacientes
+            </h2>
+
+            <p class="mt-2 text-slate-600">
+                {{ subtitulo }}
+            </p>
+
+            <p class="mt-2 text-emerald-600 font-semibold italic">
+                Mascota seleccionada: {{ mascotaSeleccionada }}
+            </p>
+        </div>
+
+        <div class="max-w-md mx-auto mb-12">
+            <label class="block text-sm font-medium text-slate-700 mb-1">
+                Buscar Mascota
+            </label>
+            <input (input)="busqueda($event)" type="text" placeholder="Ej: Firulais..."
+                class="w-full rounded-xl border border-slate-300 px-4 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            @for (mascotas of buscarMascota; track mascotas.id) {
+            <div
+                class="group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+
+                <div class="relative aspect-4/3 overflow-hidden">
+                    <img [src]="mascotas.imagen" [alt]="mascotas.nombre" [class.grayscale]="!mascotas.internado"
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+
+                    <span class="absolute top-3 right-3 px-3 py-1 text-xs font-bold rounded-full" [ngClass]="mascotas.internado
+              ? 'bg-emerald-600 text-white'
+              : 'bg-slate-800 text-white'">
+                        {{ mascotas.internado ? 'Internado' : 'Alta' }}
+                    </span>
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900">
+                        {{ mascotas.nombre }}
+                    </h3>
+
+                    <p class="mt-1 text-sm text-slate-500">
+                        {{ mascotas.especie }} • {{ mascotas.raza }}
+                    </p>
+
+                    <button (click)="seleccionar(mascotas.nombre)" [disabled]="!mascotas.internado" class="mt-6 w-full rounded-xl py-2 font-semibold transition
+              disabled:bg-slate-100 disabled:text-slate-400
+              enabled:bg-emerald-600 enabled:text-white
+              enabled:hover:bg-emerald-700">
+                        {{ mascotas.internado ? 'Ver estado' : 'No disponible' }}
+                    </button>
+                </div>
+
+            </div>
+            }
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+<nav class="bg-emerald-600 border-b border-emerald-700 shadow-sm">
+    <div class="mx-auto max-w-7xl flex flex-wrap items-center justify-between p-4">
+        <a href="#" class="flex items-center gap-3">
+            <img src="/images/veterinario.png" class="h-8" alt="Veterinaria Logo" />
+            <span class="text-xl font-bold text-white tracking-wide">
+                Patitas
+            </span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 md:hidden"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+                class="mt-4 flex flex-col gap-2 rounded-xl bg-emerald-700 p-4 font-medium md:mt-0 md:flex-row md:items-center md:gap-8 md:bg-transparent md:p-0">
+
+                <li>
+                    <a routerLink="/"
+                        class="block rounded px-3 py-2 text-white transition hover:bg-emerald-500 md:bg-transparent md:hover:text-emerald-200"
+                        aria-current="page">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="acerca"
+                        class="block rounded px-3 py-2 text-white transition hover:bg-emerald-500 md:hover:text-emerald-200">
+                        Acerca
+                    </a>
+                </li>
+                 <li>
+                    <a routerLink="consultas"
+                        class="block rounded px-3 py-2 text-white transition hover:bg-emerald-500 md:hover:text-emerald-200">
+                        Consultas
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="mascotas"
+                        class="block rounded px-3 py-2 text-white transition hover:bg-emerald-500 md:hover:text-emerald-200">
+                        Mascotas
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink=""
+                        class="block rounded px-3 py-2 text-white transition hover:bg-emerald-500 md:hover:text-emerald-200">
+                        Crear Cuenta
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="usuarios"
+                        class="block rounded-lg bg-white px-4 py-2 font-semibold text-emerald-600 transition hover:bg-emerald-100 md:ml-4">
+                        Registro
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="login"
+                        class="block rounded-lg bg-white px-4 py-2 font-semibold text-emerald-600 transition hover:bg-emerald-100 md:ml-4">
+                        Iniciar Sesión
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="login"
+                        (click)="cerrarSesion()"
+                        class="block rounded-lg bg-red-500 px-4 py-2 font-semibold text-dark transition hover:bg-emerald-100 md:ml-4">
+                        Cerrar Sesión
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
